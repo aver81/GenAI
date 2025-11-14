@@ -56,11 +56,11 @@ repo/
 
 3. Set environment variables
 
-Create a .env file in the project root:
+    - Create a .env file in the project root:
 
-```OPENAI_API_KEY=your_openai_key```
-```GROQ_API_KEY=your_groq_key```
-(Only OpenAI and Groq keys are required for this app.)
+    ```OPENAI_API_KEY=your_openai_key```
+    ```GROQ_API_KEY=your_groq_key```
+    (Only OpenAI and Groq keys are required for this app.)
 
 4. Run the app
 ```streamlit run main.py```
