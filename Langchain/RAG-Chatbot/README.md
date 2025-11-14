@@ -48,8 +48,8 @@ repo/
 # Installation & Setup
 
 1. Clone this repository
-```git clone https://github.com/yourusername/yourrepo.git
-cd yourrepo ```
+```git clone https://github.com/yourusername/yourrepo.git```
+```cd yourrepo ```
 
 2. Install dependencies
 ```pip install -r requirements.txt```
@@ -58,8 +58,8 @@ cd yourrepo ```
 
 Create a .env file in the project root:
 
-```OPENAI_API_KEY=your_openai_key
-GROQ_API_KEY=your_groq_key```
+```OPENAI_API_KEY=your_openai_key```
+```GROQ_API_KEY=your_groq_key```
 (Only OpenAI and Groq keys are required for this app.)
 
 4. Run the app
