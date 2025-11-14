@@ -42,6 +42,7 @@ repo/
 ├── requirements.txt         → Python dependencies
 └── .streamlit/ (optional)   → Streamlit configuration
 
+
 # Installation & Setup
 
 1. Clone this repository
