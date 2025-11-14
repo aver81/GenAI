@@ -68,31 +68,31 @@ Create a .env file in the project root:
 # How the RAG Pipeline Works
 1. Load PDF
 
-PyPDFLoader extracts the raw text content.
+- **PyPDFLoader** extracts the raw text content.
 
 2. Split document
 
-RecursiveCharacterTextSplitter breaks the document into 1000-character chunks with 100-character overlap.
+- **RecursiveCharacterTextSplitter** breaks the document into 1000-character chunks with 100-character overlap.
 
 3. Generate embeddings
 
 Using:
 
-```OpenAIEmbeddings(model="text-embedding-3-small")```. This provides fast and high-quality vector embeddings.
+- ```**OpenAIEmbeddings(model="text-embedding-3-small")**```. This provides fast and high-quality vector embeddings.
 
 4. Create vector DB
 
-Chroma stores embeddings in-memory:
+- **Chroma** stores embeddings in-memory:
 
-vectordb = Chroma.from_documents(content, embeddings)
+    ```vectordb = Chroma.from_documents(content, embeddings)```
 
 5. Retrieve relevant chunks
 
-The retriever fetches the most relevant text for a query.
+- The retriever fetches the most relevant text for a query.
 
 6. Feed into LLM
 
-The app uses Groq’s lightning-fast Llama 3.1 8B model for answer generation.
+- The app uses Groq’s lightning-fast Llama 3.1 8B model for answer generation.
 
 # Code Summary
 
