@@ -15,7 +15,7 @@ All done dynamically in-memory, without persistent storage.
 # Features
 1. Upload Any PDF
 
-Users can upload a document (reports, articles, PPTs exported as PDF, notes, etc.).
+- Users can upload a document (reports, articles, PPTs exported as PDF, notes, etc.).
 
 2. RAG Pipeline (Retrieval-Augmented Generation)
 
