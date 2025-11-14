@@ -19,23 +19,23 @@ All done dynamically in-memory, without persistent storage.
 
 2. RAG Pipeline (Retrieval-Augmented Generation)
 
-The app:
+- The app:
 
-1. Extracts text using PyPDFLoader
-2. Splits into overlapping chunks using RecursiveCharacterTextSplitter
-3. Creates embeddings with OpenAI's text-embedding-3-small
-4. Stores them in an in-memory Chroma vector DB
-5. Retrieves relevant context based on the user's query
-6. Generates an accurate answer using Groq's llama-3.1-8b-instant model
+    1. Extracts text using PyPDFLoader
+    2. Splits into overlapping chunks using RecursiveCharacterTextSplitter
+    3. Creates embeddings with OpenAI's text-embedding-3-small
+    4. Stores them in an in-memory Chroma vector DB
+    5. Retrieves relevant context based on the user's query
+    6. Generates an accurate answer using Groq's llama-3.1-8b-instant model
 
 # Modern LCEL (LangChain Expression Language)
 
-Uses the new LCEL pipeline:
+- Uses the new LCEL pipeline:
 
 ```Retriever → Prompt → Groq LLM → Output Parser ```
 
 
-📁 Project Structure
+# Project Structure
 repo/
 │
 ├── main.py                  → Main Streamlit application
@@ -45,24 +45,22 @@ repo/
 # Installation & Setup
 
 1. Clone this repository
-git clone https://github.com/yourusername/yourrepo.git
-cd yourrepo
+```git clone https://github.com/yourusername/yourrepo.git
+cd yourrepo ```
 
 2. Install dependencies
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 3. Set environment variables
 
 Create a .env file in the project root:
 
-OPENAI_API_KEY=your_openai_key
-GROQ_API_KEY=your_groq_key
-
-
+```OPENAI_API_KEY=your_openai_key
+GROQ_API_KEY=your_groq_key```
 (Only OpenAI and Groq keys are required for this app.)
 
 4. Run the app
-streamlit run main.py
+```streamlit run main.py```
 
 # How the RAG Pipeline Works
 1. Load PDF
