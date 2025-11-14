@@ -15,18 +15,18 @@ All done dynamically in-memory, without persistent storage.
 # Features
 1. Upload Any PDF
 
-- Users can upload a document (reports, articles, PPTs exported as PDF, notes, etc.).
+    - Users can upload a document (reports, articles, PPTs exported as PDF, notes, etc.).
 
 2. RAG Pipeline (Retrieval-Augmented Generation)
 
-- The app:
-
-    1. Extracts text using PyPDFLoader
-    2. Splits into overlapping chunks using RecursiveCharacterTextSplitter
-    3. Creates embeddings with OpenAI's text-embedding-3-small
-    4. Stores them in an in-memory Chroma vector DB
-    5. Retrieves relevant context based on the user's query
-    6. Generates an accurate answer using Groq's llama-3.1-8b-instant model
+    - The app:
+    
+        1. Extracts text using PyPDFLoader
+        2. Splits into overlapping chunks using RecursiveCharacterTextSplitter
+        3. Creates embeddings with OpenAI's text-embedding-3-small
+        4. Stores them in an in-memory Chroma vector DB
+        5. Retrieves relevant context based on the user's query
+        6. Generates an accurate answer using Groq's llama-3.1-8b-instant model
 
 # Modern LCEL (LangChain Expression Language)
 
