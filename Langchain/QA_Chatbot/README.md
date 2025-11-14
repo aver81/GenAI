@@ -1,5 +1,7 @@
 # Enhanced Q&A Chatbot using LangChain + OpenAI
 
+### Streamlit App Link: https://wenpmzpaqnnxovy2wgenqf.streamlit.app/
+
 *A lightweight, interactive chatbot built with Streamlit, LangChain, and
 OpenAI models.*
 
@@ -117,4 +119,4 @@ streamlit run main.py
 MIT License.
 
 
-Streamlit App Link: https://wenpmzpaqnnxovy2wgenqf.streamlit.app/
+
