@@ -36,8 +36,13 @@ All done dynamically in-memory, without persistent storage.
 
 
 # Project Structure
-<img width="760" height="202" alt="image" src="https://github.com/user-attachments/assets/673df2eb-dfd3-4fee-9a6e-1297b29235b3" />
-
+```
+repo/
+│
+├── main.py                  → Main Streamlit application
+├── requirements.txt         → Python dependencies
+└── .streamlit/              → Streamlit configuration (optional)
+```
 
 
 # Installation & Setup
