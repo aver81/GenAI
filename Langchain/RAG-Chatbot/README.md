@@ -1,4 +1,4 @@
-# PDF Question Answering Assistant
+# PDF Question Answering Assistant using Langchain and LCEL
 
 A Streamlit + LangChain + Groq RAG App for Querying Any PDF
 
