@@ -1,6 +1,6 @@
 # PDF Question Answering Assistant using Langchain and LCEL
 
-A Streamlit + LangChain + Groq RAG App for Querying Any PDF
+## A Streamlit + LangChain + Groq RAG App for Querying Any PDF
 
 This project allows users to upload any PDF file and ask questions based on its content. Behind the scenes, the app performs:
 
