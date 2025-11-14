@@ -97,18 +97,18 @@ Using:
 # Code Summary
 
 **Here’s the main LCEL chain:**
-
+```
 chain = (
     {"context": vectordbretriever, "question": RunnablePassthrough()}
     | prompt
     | llm
     | StrOutputParser()
 )
-
+```
 
 And execution:
 
-answer = chain.invoke(query)
+```answer = chain.invoke(query)```
 
 # Example Usage
 
@@ -121,14 +121,13 @@ answer = chain.invoke(query)
 - The chatbot returns a context-grounded answer extracted from your PDF.
 
 # Technologies Used
-Component	Library
-UI	Streamlit
-PDF Loading	LangChain PyPDFLoader
-Chunking	RecursiveCharacterTextSplitter
-Embeddings	OpenAI embeddings
-Vector DB	Chroma
-LLM	Groq (Llama 3.1 8B Instant)
-Orchestration	LangChain LCEL
+
+- PDF Document Loading -> LangChain PyPDFLoader
+- Chunking of Documents -> RecursiveCharacterTextSplitter
+- Embeddings -> OpenAI embeddings
+- Vector DB -> Chroma
+- LLM ->Groq (Llama 3.1 8B Instant)
+- Orchestration -> LangChain LCEL
 
 # Notes
 
