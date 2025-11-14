@@ -68,35 +68,35 @@ Create a .env file in the project root:
 # How the RAG Pipeline Works
 1. Load PDF
 
-- **PyPDFLoader** extracts the raw text content.
+    - **PyPDFLoader** extracts the raw text content.
 
 2. Split document
 
-- **RecursiveCharacterTextSplitter** breaks the document into 1000-character chunks with 100-character overlap.
+    - **RecursiveCharacterTextSplitter** breaks the document into 1000-character chunks with 100-character overlap.
 
 3. Generate embeddings
 
 Using:
 
-- ```**OpenAIEmbeddings(model="text-embedding-3-small")**```. This provides fast and high-quality vector embeddings.
+    - ```**OpenAIEmbeddings(model="text-embedding-3-small")**```. This provides fast and high-quality vector embeddings.
 
 4. Create vector DB
 
-- **Chroma** stores embeddings in-memory:
-
-    ```vectordb = Chroma.from_documents(content, embeddings)```
+    - **Chroma** stores embeddings in-memory:
+    
+        ```vectordb = Chroma.from_documents(content, embeddings)```
 
 5. Retrieve relevant chunks
 
-- The retriever fetches the most relevant text for a query.
+    - The retriever fetches the most relevant text for a query.
 
 6. Feed into LLM
 
-- The app uses Groq’s lightning-fast Llama 3.1 8B model for answer generation.
+    - The app uses Groq’s lightning-fast Llama 3.1 8B model for answer generation.
 
 # Code Summary
 
-Here’s the main LCEL chain:
+**Here’s the main LCEL chain:**
 
 chain = (
     {"context": vectordbretriever, "question": RunnablePassthrough()}
@@ -112,14 +112,13 @@ answer = chain.invoke(query)
 
 # Example Usage
 
-Upload a PDF (e.g., a research paper)
+- Upload a PDF (e.g., a research paper)
 
-Enter a question like:
+- Enter a question like:
 
-What does the paper say about attention mechanisms?
+    What does the paper say about attention mechanisms?
 
-
-The chatbot returns a context-grounded answer extracted from your PDF.
+- The chatbot returns a context-grounded answer extracted from your PDF.
 
 # Technologies Used
 Component	Library
@@ -133,11 +132,9 @@ Orchestration	LangChain LCEL
 
 # Notes
 
-Chroma DB is not persisted, making this ideal for dynamic uploads.
-
-PDFs must contain selectable text (OCR not included yet).
-
-PPT files are supported only if exported to text-based PDF.
+1. Chroma DB is not persisted, making this ideal for dynamic uploads.
+2. PDFs must contain selectable text (OCR not included yet).
+3. PPT files are supported only if exported to text-based PDF.
 
 # Future Enhancements
 
