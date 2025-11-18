@@ -67,7 +67,6 @@ ReAct agents:
 4. Observe results
 5. Build a final answer
 6. StreamlitCallbackHandler streams:
-
   - Thought: ...
   - Action: WikipediaQueryRun
   - Observation: ...
