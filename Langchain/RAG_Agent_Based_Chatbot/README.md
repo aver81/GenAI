@@ -1,5 +1,7 @@
 
 # Multi-Tool AI Chatbot using LangChain, Groq, and Streamlit
+
+App Link - https://khybwbfwmzetyh2ds9tcyf.streamlit.app/
 This project is an interactive AI chatbot built with LangChain, Groq LLMs, and Streamlit, designed to intelligently route queries to different tools such as:
 
 - Wikipedia → for general knowledge
