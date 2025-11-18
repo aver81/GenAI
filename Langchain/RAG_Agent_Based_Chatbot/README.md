@@ -39,13 +39,13 @@ The chatbot uses Llama-3.3-70B-Versatile (or any other Groq model you choose), p
 
 The Groq API key is entered securely via a Streamlit sidebar.
 
-📁 Project Structure
-.
+# Project Structure
+```
 |-- app.py                # Main Streamlit application
 |-- README.md             # Project documentation
 |-- .env                  # Environment variables (API keys)
 |-- requirements.txt      # Python dependencies
-
+```
 
 
 # How It Works
