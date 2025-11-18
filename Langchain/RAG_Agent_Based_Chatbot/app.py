@@ -16,7 +16,6 @@ import os
 
 load_dotenv()
 
-os.environ["LANGCHAIN_API_KEY"] = os.getenv('LANGCHAIN_API_KEY')
 LANGSMITH_API_KEY = os.getenv('LANGCHAIN_API_KEY')
 os.environ['LANGSMITH_TRACING'] = "false"
 os.environ['LANGCHAIN_TRACING_V2'] = "false"
@@ -77,6 +76,7 @@ if prompt:
         )
         st.session_state.messages.append({"role":"assistant","content":response}) #Stores the Agent's response in history
         st.write(response) #Display the LLM's response
+
 
 
 
