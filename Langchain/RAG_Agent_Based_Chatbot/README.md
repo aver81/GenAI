@@ -73,24 +73,20 @@ ReAct agents:
 
 # Tools Used
 1. Wikipedia Tool
-
-  - Used for general knowledge, definitions, and factual queries.
+    - Used for general knowledge, definitions, and factual queries.
 
 2. ArXiv Tool
-
-  - Used for academic research, ML papers, scientific topics.
+    - Used for academic research, ML papers, scientific topics.
 
 3. DuckDuckGo Search Tool
-
-  - Used for real-time and broad web queries.
+    - Used for real-time and broad web queries.
 
 4. Streamlit Components
-
-1. st.chat_input() → Chat textbox
-2. st.chat_message() → Chat bubble rendering
-3. st.session_state → Saves conversation history
-4. StreamlitCallbackHandler → Streams tool calls live
-5. Sidebar input for API key
+    - st.chat_input() → Chat textbox
+    - st.chat_message() → Chat bubble rendering
+    - st.session_state → Saves conversation history
+    - StreamlitCallbackHandler → Streams tool calls live
+    - Sidebar input for API key
 
 # Future Improvements
 
@@ -99,7 +95,5 @@ ReAct agents:
 3. Additional APIs as tools
 4. Memory modules
 5. Personality prompts
-
-Typing animation effects
-
-Just extend the agent or tool list.
+6. Typing animation effects
+7. Extending the agent or tool list.
