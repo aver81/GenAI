@@ -1,0 +1,35 @@
+# Virtual Environments
+venv/
+env/
+.env
+f1llmvenv/
+.venv/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+
+# Local environment variables
+.env
+.venv
+env.bak
+venv.bak
+
+# SQLite databases (Keep this if you don't want to push your f1_data.db to GitHub)
+*.db
+*.sqlite3

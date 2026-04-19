@@ -1,0 +1,9 @@
+numpy
+pandas
+seaborn
+langchain
+langchain-community
+langgraph
+ipykernel
+langchain-groq
+langchain-openai
