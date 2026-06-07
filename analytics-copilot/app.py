@@ -74,12 +74,6 @@ def _run_analysis(question: str, df: pd.DataFrame, table_schema) -> None:
             chart_spec = validate_chart_plan(active_plan.chart, query_result.dataframe)
             event.outputs = asdict(chart_spec)
 
-        st.subheader("Metric")
-        st.write(active_plan.metric_name or "Requested metric")
-        if active_plan.metric_reason:
-            st.caption(active_plan.metric_reason)
-        st.caption(f"Metric source: {active_plan.metric_source}")
-
         if active_plan.assumptions:
             st.info("Assumptions: " + " ".join(active_plan.assumptions))
         if active_plan.warnings:
@@ -104,7 +98,6 @@ def _run_analysis(question: str, df: pd.DataFrame, table_schema) -> None:
         st.dataframe(query_result.dataframe, use_container_width=True)
     finally:
         _store_trace(trace)
-        _render_trace(trace)
 
 
 def _execute_with_one_repair(
@@ -180,36 +173,45 @@ normalized = normalize_dataframe_for_query(dataframe)
 query_dataframe = normalized.query_df
 schema = infer_schema(query_dataframe, table_name=TABLE_NAME, normalization_profiles=normalized.column_profiles)
 
-left, right = st.columns([2, 1])
-with left:
-    st.subheader("Dataset preview")
-    st.dataframe(dataframe.head(50), use_container_width=True)
-with right:
-    st.subheader("Schema")
-    st.dataframe(pd.DataFrame(schema.as_records()), use_container_width=True)
+analysis_tab, trace_tab = st.tabs(["Analysis", "Traces"])
 
-with st.expander("Type normalization"):
+with analysis_tab:
+    left, right = st.columns([2, 1])
+    with left:
+        st.subheader("Dataset preview")
+        st.dataframe(dataframe.head(50), use_container_width=True)
+    with right:
+        st.subheader("Schema")
+        st.dataframe(pd.DataFrame(schema.as_records()), use_container_width=True)
+
+    question = st.text_input(
+        "Ask a question",
+        placeholder="Example: Analyze CTR platform-wise",
+    )
+
+    if st.button("Run analysis", type="primary", disabled=not question):
+        try:
+            _run_analysis(question, query_dataframe, schema)
+        except SQLValidationError as exc:
+            st.error(f"Generated SQL was rejected: {exc}")
+        except RuntimeError as exc:
+            st.error(str(exc))
+        except Exception as exc:
+            st.error(f"Analysis failed: {exc}")
+
+with trace_tab:
+    st.subheader("Type normalization")
+    st.caption(
+        "The app keeps your uploaded CSV unchanged for preview, but queries run against "
+        "a normalized copy where obvious dates, numbers, percents, and booleans are parsed."
+    )
     st.dataframe(pd.DataFrame(normalized.as_records()), use_container_width=True)
     if normalized.warnings:
         st.warning(" ".join(normalized.warnings))
 
-question = st.text_input(
-    "Ask a question",
-    placeholder="Example: Analyze CTR platform-wise",
-)
-
-if st.button("Run analysis", type="primary", disabled=not question):
-    try:
-        _run_analysis(question, query_dataframe, schema)
-    except SQLValidationError as exc:
-        st.error(f"Generated SQL was rejected: {exc}")
-    except RuntimeError as exc:
-        st.error(str(exc))
-    except Exception as exc:
-        st.error(f"Analysis failed: {exc}")
-
-traces = st.session_state.get("traces", [])
-if traces:
     st.subheader("Recent traces")
-    for trace in traces[1:]:
+    traces = st.session_state.get("traces", [])
+    if not traces:
+        st.info("Run an analysis to collect traces.")
+    for trace in traces:
         _render_trace(trace)
