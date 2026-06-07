@@ -1,0 +1,22 @@
+[
+  {
+    "question": "How many total events are there?",
+    "expected_sql_hint": "count"
+  },
+  {
+    "question": "How many events happened by event name?",
+    "expected_sql_hint": "group by event_name"
+  },
+  {
+    "question": "How many unique users signed up by source?",
+    "expected_sql_hint": "count distinct user_id"
+  },
+  {
+    "question": "What is the daily signup trend?",
+    "expected_sql_hint": "event_name = 'signup'"
+  },
+  {
+    "question": "How many purchases happened by plan?",
+    "expected_sql_hint": "event_name = 'purchase'"
+  }
+]

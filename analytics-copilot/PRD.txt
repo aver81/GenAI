@@ -1,0 +1,31 @@
+Project Name:
+AI Product Analytics Copilot
+
+Problem:
+Product managers depend on analysts for basic metric questions.
+
+Target User:
+PMs and Growth Teams
+
+Core Features:
+1. Upload data
+2. Ask questions
+3. Generate SQL
+4. Create charts
+
+Out of Scope:
+Authentication
+Multi-tenancy
+Enterprise deployment
+
+Success Metrics:
+80% benchmark accuracy
+<10 second response time
+
+Tech Stack:
+DuckDB
+Direct LLM API call
+Streamlit
+Docker
+
+

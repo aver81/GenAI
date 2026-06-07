@@ -1,6 +1,7 @@
-[ ] CSV upload
-[ ] Schema detection
-[ ] SQL generation
-[ ] SQL execution
-[ ] Charts
-[ ] Evaluation
+[x] CSV upload
+[x] Schema detection
+[x] Structured SQL + metric + chart planning
+[x] SQL execution
+[x] Charts
+[x] Evaluation
+[x] Tracing

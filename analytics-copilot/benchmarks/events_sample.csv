@@ -1,0 +1,13 @@
+user_id,event_name,event_time,source,plan,variant
+u1,signup,2026-01-01 09:00:00,organic,free,A
+u1,activation,2026-01-01 09:20:00,organic,free,A
+u2,signup,2026-01-01 11:00:00,paid,free,A
+u3,signup,2026-01-02 10:00:00,organic,free,B
+u2,activation,2026-01-02 11:15:00,paid,free,A
+u4,signup,2026-01-03 08:30:00,paid,pro,B
+u4,purchase,2026-01-03 09:45:00,paid,pro,B
+u5,signup,2026-01-04 13:00:00,referral,free,A
+u6,signup,2026-01-05 12:00:00,referral,free,B
+u6,activation,2026-01-05 12:30:00,referral,free,B
+u7,signup,2026-01-06 15:00:00,organic,pro,B
+u7,purchase,2026-01-06 16:00:00,organic,pro,B
